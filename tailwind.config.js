@@ -12,11 +12,12 @@ module.exports = {
       xl: '1440px',
     },  
     colors: {
-      'white': '#ffffff',
-      'black': '#000000',
-      'darkBlue': '#242f65',
+      'white': '#f5fdff',
+      'black': '#070912',
+      'darkBlue': '#151c37',
       'lightBlue': '#3db8e9',
       'pink': '#dd0079',
+      'grey': '#cfcfcf',
       'purple': '#88145c'
     },
     fontFamily: {

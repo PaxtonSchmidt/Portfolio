@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Masthead } from '../components/Masthead/Masthead'
+import { Projects } from '../components/Projects/Projects'
 
 const Home: NextPage = () => {
   return (
@@ -16,9 +17,7 @@ const Home: NextPage = () => {
 
       <main className='overflowY-scroll scroll-smooth bg-black'>
         <Masthead />
-        <div className='bg-white h-screen relative'>
-          sdasdad
-        </div>
+        <Projects />
         <h1>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
