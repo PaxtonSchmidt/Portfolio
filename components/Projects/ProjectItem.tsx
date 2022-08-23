@@ -9,7 +9,7 @@ interface props {
 
 export const ProjectItem: React.FC<props> = ({ data, children }) => {
   return (
-    <article className='grid mt-12 grid-rows-1 md:grid-rows-2 grid-cols-8 font-serif text-sm border-grey border-b-2'>
+    <article className='grid mt-16 pb-16 grid-rows-1 grid-cols-5 lg:grid-cols-8  font-serif text-sm border-grey border-b-2'>
       
       <figure className='block col-span-3'>
         <h1 className='text-xl font-sans'>{data.title}</h1>
@@ -60,7 +60,8 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
         </figure>
       </div>
 
-      <div className='grid grid-cols-4 pt-8 col-span-3'>
+      {data.notableFeatures 
+      && <div className='grid grid-cols-4 pt-8 col-span-3'>
         <figure className='col-span-3'>
           <figcaption className='font-bold'>Notable Features:</figcaption>
           <ul>
@@ -74,7 +75,7 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
             ))}
           </ul>
         </figure>
-      </div>
+      </div>}
 
 
       

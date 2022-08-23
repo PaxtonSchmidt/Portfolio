@@ -36,14 +36,14 @@ export const ProjectsData = {
       'CSS3',
       'Sass'
     ],
-    role: `The goal was to develop a ticket tracking website that allows a user to organize a team and track any and all issues on their projects. BugTracker solves this problem and gives users the ability to grow their team, organize their projects and coordinate with their teammates.`,
-    difficulties: `The initial design of the site lacked a global state solution which resulted in issues including a hard-to-manage tree of drilled props and repetitive requests to the server.`,
-    solution: `Not only did implementing a Redux state solution fix both of these issues, it also increased the speed at which the application could horizontally expand. I no longer had to back pedal and refactor when implementing a new feature that required old state, making it well worth the time invested in writing out the extra Redux boilerplate.`,
+    role: `BugTracker enables users to track tickets, manage their projects, grow their teams, and coordinate with their teammates.`,
+    difficulties: `The initial iteration of the app lacked a global state solution causing an array of issues that include a hard-to-manage tree of drilled props and repetitive requests to the server.`,
+    solution: `A Redux state solution fixed both issues with some positive side effects. It increased the speed at which the application could horizontally expand, and I no longer had to backpedal and refactor when implementing a new feature that required the old state.`,
     notableFeatures: [
       'Registration',
       'Login',
       'Authentication with JSON Web Tokens',
-      'Issue Tracking with Tickets',
+      'Issue tracking with Tickets',
       'Projects as collections of Tickets',
       'Teams as collections of Projects',
       'Role based Authorization',
@@ -64,9 +64,9 @@ export const ProjectsData = {
       'CSS3',
       'HTML5'
     ],
-    role: `Making this page look nice took some focus.`,
-    difficulties: `design blech`,
-    solution: `implementing features`
+    role: `The goal of this project was to display my works clearly and concisely.`,
+    difficulties: `The process of writing and reorganizing semantic CSS continues to slow my development process. While this has a lesser effect on a smaller project like this portfolio, I felt it could be an opportunity to learn Tailwindcss.`,
+    solution: `The beauty of a class library like Tailwindcss is its synergy with ReactJS. Semantic CSS felt logical when I was writing pure HTML, but there is far less repeated markup in React components. For this reason, I could avoid linking elements with semantic CSS classes.`
   },
   TorysDiner: {
     title: "Tory's Diner",
@@ -74,9 +74,11 @@ export const ProjectsData = {
     codeLink: 'https://github.com/PaxtonSchmidt/Portfolio',
     technologies: [
       'ReactJS',
+      'useContext',
       'Typescript',
       'Tailwindcss',
-      'NextJS'
+      'NextJS',
+      'GIMP'
     ],
     role: `Making this page look nice took some focus.`,
     difficulties: `design blech`,
