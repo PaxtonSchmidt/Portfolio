@@ -11,7 +11,7 @@ export const MoreWorks: React.FC = () => {
   const [focusedWork, setFocusedWork] = useState<Work>(Works.TorysDiner)
 
   return (
-    <section className='mt-32 pb-16 px-2 md:px-0 flex flex-col text-sm md:flex-row justify-center'>
+    <section className='mt-32 mb-36 pb-16 px-2 md:px-0 flex flex-col text-sm md:flex-row justify-center'>
       
       <MoreWorksSidebar>
         <MoreWorksTab work={Works.TorysDiner} setFocusedWork={setFocusedWork} focusedWork={focusedWork}>
