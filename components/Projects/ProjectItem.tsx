@@ -9,9 +9,9 @@ interface props {
 
 export const ProjectItem: React.FC<props> = ({ data, children }) => {
   return (
-    <article className='grid mt-16 pb-16 grid-rows-1 grid-cols-5 lg:grid-cols-8  font-serif text-sm border-grey border-b-2'>
+    <article className='md:grid mt-16 pb-16 grid-rows-1 grid-cols-5 lg:grid-cols-8  font-serif text-sm border-grey border-b-2'>
       
-      <figure className='block col-span-3'>
+      <figure className='block xl:col-start-2 col-span-4 xl:col-span-3'>
         <h1 className='text-xl font-sans'>{data.title}</h1>
         <div className='flex mb-1'>
           {data.demoLink && 
@@ -29,7 +29,7 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
         {children}
       </figure>
 
-      <div className='pt-12 pl-6 row-span-2 col-span-5'>
+      <div className='pt-12 pl-6 row-span-2 col-span-4 xl:col-span-3 max-w-[500px]'>
         <figure className='mb-2'>
           <figcaption className='font-bold'>Project:</figcaption>
           <p>{data.role}</p>
@@ -47,9 +47,9 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
         
         <figure >
           <figcaption className='font-bold'>Technologies:</figcaption>
-          <ul>
+          <ul className='flex flex-row flex-wrap'>
             {data.technologies.map((tech: string) => (
-              <li className='flex direction-row'>
+              <li className='flex direction-row mr-2'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="" className="bi bi-nut-fill fill-lightBlue pt-1" viewBox="0 0 16 16">
                   <path d="M4.58 1a1 1 0 0 0-.868.504l-3.428 6a1 1 0 0 0 0 .992l3.428 6A1 1 0 0 0 4.58 15h6.84a1 1 0 0 0 .868-.504l3.429-6a1 1 0 0 0 0-.992l-3.429-6A1 1 0 0 0 11.42 1H4.58zm5.018 9.696a3 3 0 1 1-3-5.196 3 3 0 0 1 3 5.196z"/>
                 </svg>
@@ -61,7 +61,7 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
       </div>
 
       {data.notableFeatures 
-      && <div className='grid grid-cols-4 pt-8 col-span-3'>
+      && <div className='grid xl:col-start-2 grid-cols-3 pt-8 col-span-4 xl:col-span-3'>
         <figure className='col-span-3'>
           <figcaption className='font-bold'>Notable Features:</figcaption>
           <ul>

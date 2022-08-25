@@ -23,11 +23,11 @@ export const Masthead: React.FC = () => {
 
       <header className='my-auto font-serif font-bold w-full text-center md:text-left text-white'>
         <h1 className='md:text-xl tracking-wider'>HI, I'M</h1>
-        <h1 className='text-7xl md:text-8xl tracking-tighter font-sans -translate-x-1'>Paxton<span className='text-7xl'>.</span></h1>
+        <h1 className='text-7xl tracking-tighter font-sans -translate-x-1'>Paxton<span className='text-7xl'>.</span></h1>
         <h1 className='md:text-lg text-lightBlue tracking-widest'>FULL-STACK DEVELOPER</h1>
         <MastheadButtonsContainer>
           <MastheadButton title={'View Projects'} navLink={'projects'} scrollTo={true} />
-          <MastheadButton title={'Contact Me'} navLink={'asdasdasd'} scrollTo={true} />
+          <MastheadButton title={'Contact Me'} navLink={'contact'} scrollTo={true} />
           <MastheadButton title={'Github'} navLink={'https://github.com/PaxtonSchmidt'} />
           <MastheadButton title={'Resume'} navLink={'asdasdasd'} />
         </MastheadButtonsContainer>

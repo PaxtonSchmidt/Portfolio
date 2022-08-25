@@ -1,7 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { About } from '../components/About/About'
+import { Contact } from '../components/Contact/Contact'
+import { Footer } from '../components/Footer/Footer'
 import { Masthead } from '../components/Masthead/Masthead'
+import { MoreWorks } from '../components/Projects/MoreWorks/MoreWorks'
 import { Projects } from '../components/Projects/Projects'
+import { Technologies } from '../components/Technologies/Technologies'
 
 const Home: NextPage = () => {
   return (
@@ -17,7 +22,11 @@ const Home: NextPage = () => {
 
       <main className='overflowY-scroll scroll-smooth bg-black'>
         <Masthead />
+        <Technologies />
         <Projects />
+        {/* <About /> */}
+        <Contact />
+        {/* <Footer /> */}
       </main>
     </>
   )
