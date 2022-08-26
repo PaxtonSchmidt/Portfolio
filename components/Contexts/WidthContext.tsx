@@ -15,6 +15,10 @@ interface Props {
 export const WidthObserver: React.FC<Props> = ({ children }) => {
   const [width, setWidth] = useState(0)
 
+  useEffect(() => {
+    setWidth(window.innerWidth)
+  }, [])
+
   const handleResize = useCallback(()=>{
     setWidth(window.innerWidth)
   }, [])
@@ -22,7 +26,7 @@ export const WidthObserver: React.FC<Props> = ({ children }) => {
   useEffect(()=> {
     window.addEventListener('resize', handleResize)
     return ()=>window.removeEventListener('resize', handleResize)
-  })
+  }, [])
 
   return (
     <WidthContext.Provider value={{ width }}>

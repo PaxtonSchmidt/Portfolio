@@ -1,4 +1,6 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useContext, useRef, useState } from 'react'
+import { WidthContext } from '../Contexts/WidthContext'
+import useOnScreen from '../Hooks/useOnScreen'
 import { ProjectContent } from './ProjectData'
 import { ProjectItemNavButton } from './ProjectItemNavButton'
 
@@ -8,10 +10,15 @@ interface props {
 }
 
 export const ProjectItem: React.FC<props> = ({ data, children }) => {
+  const { width } = useContext(WidthContext);
+  const [isOpen, setIsOpen] = useState(false);
+  const onScreenEl = useRef(null)
+  const isIntersecting = useOnScreen(onScreenEl);
+
+  console.log(width)
   return (
-    <article className='md:grid mt-16 pb-16 grid-rows-1 grid-cols-5 lg:grid-cols-8  font-serif text-sm border-grey border-b-2'>
-      
-      <figure className='block xl:col-start-2 col-span-4 xl:col-span-3'>
+    <article className='md:grid pt-36 pb-36 grid-rows-1 grid-cols-4 lg:grid-cols-8  font-serif text-sm border-grey border-b-2'>
+      <figure ref={onScreenEl} className='px-6 lg:px-0 block xl:col-start-2 col-span-4 xl:col-span-3'>
         <h1 className='text-xl font-sans'>{data.title}</h1>
         <div className='flex mb-1'>
           {data.demoLink && 
@@ -26,15 +33,17 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
           </svg>
           </ProjectItemNavButton>
         </div>
-        {children}
+        {children} 
       </figure>
 
-      <div className='pt-12 pl-6 row-span-2 col-span-4 xl:col-span-3 max-w-[500px]'>
+      <div className='pt-4 lg:pt-12 pl-6 row-span-2 col-span-4 xl:col-span-3 max-w-[500px]'>
         <figure className='mb-2'>
           <figcaption className='font-bold'>Project:</figcaption>
           <p>{data.role}</p>
         </figure> 
 
+        {width > 976 
+        ?<> 
         <figure className='mb-2'>
           <figcaption className='font-bold'>Difficulties:</figcaption>
           <p>{data.difficulties}</p>
@@ -43,7 +52,10 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
         <figure className='mb-2'>
           <figcaption className='font-bold'>Solution:</figcaption>
           <p>{data.solution}</p>
-        </figure>
+        </figure></>
+        : (isIntersecting && <button className='h-[40px] w-fit px-6 rounded-3xl bg-black text-white fixed z-10 right-5 bottom-5 shadow-[0px_0px_3px_rgba(0,0,0,0.3)] shadow-white'>Details</button>)
+        }
+        
         
         <figure >
           <figcaption className='font-bold'>Technologies:</figcaption>
@@ -61,7 +73,7 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
       </div>
 
       {data.notableFeatures 
-      && <div className='grid xl:col-start-2 grid-cols-3 pt-8 col-span-4 xl:col-span-3'>
+      && <div className='grid px-6 lg:px-0 xl:col-start-2 grid-cols-3 pt-4 lg:pt-8 col-span-4 xl:col-span-3'>
         <figure className='col-span-3'>
           <figcaption className='font-bold'>Notable Features:</figcaption>
           <ul>

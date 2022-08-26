@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MoreWorksSidebar } from './MoreWorksSidebar'
 import { MoreWorksTab } from './MoreWorksTab'
 import { MoreWorks as Works, Work } from './MoreWorksData'
@@ -11,7 +11,7 @@ export const MoreWorks: React.FC = () => {
   const [focusedWork, setFocusedWork] = useState<Work>(Works.TorysDiner)
 
   return (
-    <section className='mt-32 mb-36 pb-16 px-2 md:px-0 flex flex-col text-sm md:flex-row justify-center'>
+    <section className='pt-36 pb-16 px-2 md:px-0 flex flex-col text-sm md:flex-row justify-center'>
       
       <MoreWorksSidebar>
         <MoreWorksTab work={Works.TorysDiner} setFocusedWork={setFocusedWork} focusedWork={focusedWork}>

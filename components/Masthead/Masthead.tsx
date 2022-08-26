@@ -26,8 +26,8 @@ export const Masthead: React.FC = () => {
         <h1 className='text-7xl tracking-tighter font-sans -translate-x-1'>Paxton<span className='text-7xl'>.</span></h1>
         <h1 className='md:text-lg text-lightBlue tracking-widest'>FULL-STACK DEVELOPER</h1>
         <MastheadButtonsContainer>
-          <MastheadButton title={'View Projects'} navLink={'projects'} scrollTo={true} />
-          <MastheadButton title={'Contact Me'} navLink={'contact'} scrollTo={true} />
+          <MastheadButton title={'View Projects'} navLink={'projects'} isScrollTo={true} />
+          <MastheadButton title={'Contact Me'} navLink={'contact'} isScrollTo={true} />
           <MastheadButton title={'Github'} navLink={'https://github.com/PaxtonSchmidt'} />
           <MastheadButton title={'Resume'} navLink={'asdasdasd'} />
         </MastheadButtonsContainer>

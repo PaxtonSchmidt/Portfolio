@@ -18,7 +18,8 @@ module.exports = {
       'lightBlue': '#3db8e9',
       'red': '#ff0000',
       'grey': '#cfcfcf',
-      'purple': '#88145c'
+      'purple': '#88145c',
+      'green': '#00D100',
     },
     fontFamily: {
       sans: ['Montserrat', 'sans-serif'],

@@ -1,19 +1,15 @@
 import React, { useCallback } from 'react'
+import NavHelper from '../../helpers/NavHelper';
 
 interface Props {
   title: string,
   navLink: string,
-  scrollTo?: boolean
+  isScrollTo?: boolean
 }
 
-export const MastheadButton: React.FC<Props> = ({ title, navLink, scrollTo }) => {
+export const MastheadButton: React.FC<Props> = ({ title, navLink, isScrollTo = false }) => {
   const handleSelect = useCallback(()=>{
-    if(scrollTo === true){
-      const element = document.getElementById(navLink)
-      return element?.scrollIntoView({ behavior: 'smooth' })
-    } else {
-      return window.open(navLink, '_blank')
-    }
+    NavHelper(navLink, isScrollTo)
   }, []);
 
 
