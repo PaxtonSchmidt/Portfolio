@@ -3,7 +3,7 @@ export interface Work {
   technologies: string[],
   codeLink: string,
   demoLink: string,
-  descripton: string
+  description: string
 }
 
 interface MoreWorks {
@@ -23,6 +23,6 @@ export const MoreWorks: MoreWorks = {
     ],
     codeLink: 'https://github.com/PaxtonSchmidt/Torys-Diner',
     demoLink: 'https://torys-diner.pages.dev/',
-    descripton: `A simplistic frontend site built for an incredible cafe in Boquete, Panama.`,
+    description: `A simplistic frontend site built for an incredible cafe in Boquete, Panama.`,
   }
 }

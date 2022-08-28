@@ -15,7 +15,6 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
   const onScreenEl = useRef(null)
   const isIntersecting = useOnScreen(onScreenEl);
 
-  console.log(width)
   return (
     <article className='md:grid pt-36 pb-36 grid-rows-1 grid-cols-4 lg:grid-cols-8  font-serif text-sm border-grey border-b-2'>
       <figure ref={onScreenEl} className='px-6 lg:px-0 block xl:col-start-2 col-span-4 xl:col-span-3'>
@@ -44,15 +43,15 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
 
         {width > 976 
         ?<> 
-        <figure className='mb-2'>
-          <figcaption className='font-bold'>Difficulties:</figcaption>
-          <p>{data.difficulties}</p>
-        </figure>
-
-        <figure className='mb-2'>
-          <figcaption className='font-bold'>Solution:</figcaption>
-          <p>{data.solution}</p>
-        </figure></>
+          <figure className='mb-2'>
+            <figcaption className='font-bold'>Difficulties:</figcaption>
+            <p>{data.difficulties}</p>
+          </figure>
+          <figure className='mb-2'>
+            <figcaption className='font-bold'>Solution:</figcaption>
+            <p>{data.solution}</p>
+          </figure>
+        </>
         : (isIntersecting && <button className='h-[40px] w-fit px-6 rounded-3xl bg-black text-white fixed z-10 right-5 bottom-5 shadow-[0px_0px_3px_rgba(0,0,0,0.3)] shadow-white'>Details</button>)
         }
         
@@ -60,8 +59,8 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
         <figure >
           <figcaption className='font-bold'>Technologies:</figcaption>
           <ul className='flex flex-row flex-wrap'>
-            {data.technologies.map((tech: string) => (
-              <li className='flex direction-row mr-2'>
+            {data.technologies.map((tech: string, index: number) => (
+              <li key={index} className='flex direction-row mr-2'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="" className="bi bi-nut-fill fill-lightBlue pt-1" viewBox="0 0 16 16">
                   <path d="M4.58 1a1 1 0 0 0-.868.504l-3.428 6a1 1 0 0 0 0 .992l3.428 6A1 1 0 0 0 4.58 15h6.84a1 1 0 0 0 .868-.504l3.429-6a1 1 0 0 0 0-.992l-3.429-6A1 1 0 0 0 11.42 1H4.58zm5.018 9.696a3 3 0 1 1-3-5.196 3 3 0 0 1 3 5.196z"/>
                 </svg>
@@ -73,24 +72,23 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
       </div>
 
       {data.notableFeatures 
-      && <div className='grid px-6 lg:px-0 xl:col-start-2 grid-cols-3 pt-4 lg:pt-8 col-span-4 xl:col-span-3'>
-        <figure className='col-span-3'>
-          <figcaption className='font-bold'>Notable Features:</figcaption>
-          <ul>
-            {data.notableFeatures?.map((feature: string) => (
-              <li className='flex direction-row'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="" className="bi bi-nut-fill fill-lightBlue pt-1" viewBox="0 0 16 16">
-                  <path d="M4.58 1a1 1 0 0 0-.868.504l-3.428 6a1 1 0 0 0 0 .992l3.428 6A1 1 0 0 0 4.58 15h6.84a1 1 0 0 0 .868-.504l3.429-6a1 1 0 0 0 0-.992l-3.429-6A1 1 0 0 0 11.42 1H4.58zm5.018 9.696a3 3 0 1 1-3-5.196 3 3 0 0 1 3 5.196z"/>
-                </svg>
-                <p>{feature}</p>
-              </li>
-            ))}
-          </ul>
-        </figure>
-      </div>}
+      &&<div className='grid px-6 lg:px-0 xl:col-start-2 grid-cols-3 pt-4 lg:pt-8 col-span-4 xl:col-span-3'>
+          <figure className='col-span-3'>
+            <figcaption className='font-bold'>Notable Features:</figcaption>
+            <ul>
+              {data.notableFeatures?.map((feature: string, index: number) => (
+                <li key={index} className='flex direction-row'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="" className="bi bi-nut-fill fill-lightBlue pt-1" viewBox="0 0 16 16">
+                    <path d="M4.58 1a1 1 0 0 0-.868.504l-3.428 6a1 1 0 0 0 0 .992l3.428 6A1 1 0 0 0 4.58 15h6.84a1 1 0 0 0 .868-.504l3.429-6a1 1 0 0 0 0-.992l-3.429-6A1 1 0 0 0 11.42 1H4.58zm5.018 9.696a3 3 0 1 1-3-5.196 3 3 0 0 1 3 5.196z"/>
+                  </svg>
+                  <p>{feature}</p>
+                </li>
+              ))}
+            </ul>
+          </figure>
+        </div>
+      }
 
-
-      
     </article>
   )
 }
