@@ -12,7 +12,7 @@ module.exports = {
       xl: '1440px',
     },  
     colors: {
-      'white': '#f5fdff',
+      'white': '#fafeff',
       'black': '#070912',
       'darkBlue': '#151c37',
       'lightBlue': '#3db8e9',
