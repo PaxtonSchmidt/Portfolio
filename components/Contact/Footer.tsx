@@ -9,13 +9,10 @@ export const Footer: React.FC = () => {
         <button onClick={()=>NavHelper('projects', true)} className='w-[80px] opacity-50'>
           <p className='mt-auto'>Projects</p>
         </button>
-        <button onClick={()=>NavHelper('contact', true)} className='w-[80px] opacity-50'>
-          <p className='mt-auto'>Contact</p>
-        </button>
         <button onClick={()=>NavHelper('https://github.com/PaxtonSchmidt', false)} className='w-[80px] opacity-50'>
           <p className='mt-auto'>Github</p>
         </button>
-        <button onClick={()=>NavHelper('https://github.com/PaxtonSchmidt', false)} className='w-[80px] opacity-50'>
+        <button onClick={()=>NavHelper('https://www.linkedin.com/in/paxtonschmidt/', false)} className='w-[80px] opacity-50'>
           <p className='mt-auto'>LinkedIn</p>
         </button>
         <button onClick={()=>NavHelper('https://github.com/PaxtonSchmidt', false)} className='w-[80px] opacity-50'>

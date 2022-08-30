@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { WidthContext } from '../../Contexts/WidthContext'
+import { WidthContext } from '../../State/Contexts/WidthContext'
 
 interface Props {
   children: React.ReactNode

@@ -1,6 +1,8 @@
 import React, { ReactNode, useContext, useRef, useState } from 'react'
-import { WidthContext } from '../Contexts/WidthContext'
-import useOnScreen from '../Hooks/useOnScreen'
+import { Modal } from '../Modal/Modal'
+import { ModalBackground } from '../Modal/ModalBackground'
+import { WidthContext } from '../State/Contexts/WidthContext'
+import useOnScreen from '../State/Hooks/useOnScreen'
 import { ProjectContent } from './ProjectData'
 import { ProjectItemNavButton } from './ProjectItemNavButton'
 
@@ -52,7 +54,11 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
             <p>{data.solution}</p>
           </figure>
         </>
-        : (isIntersecting && <button className='h-[40px] w-fit px-6 rounded-3xl bg-black text-white fixed z-10 right-5 bottom-5 shadow-[0px_0px_3px_rgba(0,0,0,0.3)] shadow-white'>Details</button>)
+        : (isIntersecting && !isOpen
+          && 
+          <button onClick={()=>setIsOpen(true)} className='h-[40px] w-fit px-6 rounded-3xl bg-black text-white fixed z-10 right-5 bottom-5 shadow-[0px_0px_3px_rgba(0,0,0,0.3)] shadow-white'>
+            Details
+          </button>)
         }
         
         
@@ -88,7 +94,9 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
           </figure>
         </div>
       }
-
+      
+      {isOpen && <ModalBackground setIsOpen={setIsOpen} />}
+      {isOpen && <Modal />}
     </article>
   )
 }

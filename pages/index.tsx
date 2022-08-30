@@ -16,7 +16,7 @@ const Home: NextPage = () => {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
       </Head>
 
-      <main id='main' className='overflowY-scroll scroll-smooth bg-black'>
+      <main id='main' className='scroll-smooth bg-black'>
         <Masthead />
         <Projects />
         {/* <About /> */}

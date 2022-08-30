@@ -30,7 +30,7 @@ export const WidthObserver: React.FC<Props> = ({ children }) => {
 
   return (
     <WidthContext.Provider value={{ width }}>
-      { children }
+      {children}
     </WidthContext.Provider>
   )
 }

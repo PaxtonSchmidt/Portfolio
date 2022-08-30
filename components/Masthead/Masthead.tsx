@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef } from 'react'
-import { ScrollContext } from '../Contexts/ScrollContext'
+import { ScrollContext } from '../State/Contexts/ScrollContext'
 import { MastheadArrow } from './MastheadArrow'
 import { MastheadButton } from './MastheadButton'
 import { MastheadButtonsContainer } from './MastheadButtonContainer'
