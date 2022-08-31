@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { About } from '../components/About/About'
 import { Contact } from '../components/Contact/Contact'
 import { Masthead } from '../components/Masthead/Masthead'
 import { Projects } from '../components/Projects/Projects'
@@ -16,7 +17,7 @@ const Home: NextPage = () => {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
       </Head>
 
-      <main id='main' className='scroll-smooth bg-black'>
+      <main id='main' className='scroll-smooth bg-gradient-to-br from-black to-darkBlue'>
         <Masthead />
         <Projects />
         {/* <About /> */}

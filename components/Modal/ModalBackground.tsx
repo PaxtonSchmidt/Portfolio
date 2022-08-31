@@ -12,11 +12,9 @@ export const ModalBackground: React.FC<Props> = ({ setIsOpen }) => {
     let el = document.getElementsByTagName('body')[0]
     el!.classList.add(`pr-[${scrollBarWidth}px]`)
     el!.classList.add(`overflow-y-hidden`)
-    console.log(el)
     return ()=>{
       el!.classList.remove(`pr-[${scrollBarWidth}px]`)
       el!.classList.remove(`overflow-y-hidden`)
-      console.log(el)
     }
   }, [])
 

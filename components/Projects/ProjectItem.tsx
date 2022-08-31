@@ -7,20 +7,18 @@ import { ProjectContent } from './ProjectData'
 import { ProjectItemNavButton } from './ProjectItemNavButton'
 
 interface props {
-  data: ProjectContent,
-  children: ReactNode
+  data: ProjectContent
 }
 
-export const ProjectItem: React.FC<props> = ({ data, children }) => {
+export const ProjectItem: React.FC<props> = ({ data }) => {
   const { width } = useContext(WidthContext);
   const [isOpen, setIsOpen] = useState(false);
   const onScreenEl = useRef(null)
-  const isIntersecting = useOnScreen(onScreenEl);
 
   return (
     <article className='md:grid pt-36 pb-36 grid-rows-1 grid-cols-4 lg:grid-cols-8  font-serif text-sm border-grey border-b-2'>
       <figure ref={onScreenEl} className='px-6 lg:px-0 block xl:col-start-2 col-span-4 xl:col-span-3'>
-        <h1 className='text-xl font-sans'>{data.title}</h1>
+        <h1 className='text-xl font-sans drop-shadow'>{data.title}</h1>
         <div className='flex mb-1'>
           {data.demoLink && 
           <ProjectItemNavButton link={data.demoLink} text='Demo'>
@@ -34,17 +32,21 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
           </svg>
           </ProjectItemNavButton>
         </div>
-        {children} 
+        <img src={`${data.img}`} className='w-80'/>
+
+        <button onClick={()=>setIsOpen(true)} className='h-[40px] bottom-0 mt-2 w-fit px-6 rounded-3xl bg-black text-white shadow-[0px_0px_3px_rgba(0,0,0,0.3)] shadow-white'>
+          Details
+        </button>
       </figure>
 
-      <div className='pt-4 lg:pt-12 pl-6 row-span-2 col-span-4 xl:col-span-3 max-w-[500px]'>
+      <div className='pt-2 lg:pt-12 pl-6 row-span-2 col-span-4 xl:col-span-3 max-w-[500px]'>
         <figure className='mb-2'>
           <figcaption className='font-bold'>Project:</figcaption>
           <p>{data.role}</p>
         </figure> 
 
         {width > 976 
-        ?<> 
+        &&<> 
           <figure className='mb-2'>
             <figcaption className='font-bold'>Difficulties:</figcaption>
             <p>{data.difficulties}</p>
@@ -53,12 +55,7 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
             <figcaption className='font-bold'>Solution:</figcaption>
             <p>{data.solution}</p>
           </figure>
-        </>
-        : (isIntersecting && !isOpen
-          && 
-          <button onClick={()=>setIsOpen(true)} className='h-[40px] w-fit px-6 rounded-3xl bg-black text-white fixed z-10 right-5 bottom-5 shadow-[0px_0px_3px_rgba(0,0,0,0.3)] shadow-white'>
-            Details
-          </button>)
+        </> 
         }
         
         
@@ -78,7 +75,8 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
       </div>
 
       {data.notableFeatures 
-      &&<div className='grid px-6 lg:px-0 xl:col-start-2 grid-cols-3 pt-4 lg:pt-8 col-span-4 xl:col-span-3'>
+      && width > 480
+      &&<div className='grid px-6 lg:px-0 xl:col-start-2 grid-cols-3 pt-2 col-span-4 xl:col-span-3'>
           <figure className='col-span-3'>
             <figcaption className='font-bold'>Notable Features:</figcaption>
             <ul>
@@ -96,7 +94,8 @@ export const ProjectItem: React.FC<props> = ({ data, children }) => {
       }
       
       {isOpen && <ModalBackground setIsOpen={setIsOpen} />}
-      {isOpen && <Modal />}
+      {isOpen && <Modal data={data} />}
+      {isOpen && width <= 768 && <button onClick={()=>setIsOpen(false)} className='fixed bg-black text-lightBlue top-5 right-5 z-50 rounded-xl h-[30px] w-fit px-5 drop-shadow border-[1px] border-lightBlue'>Close</button>}
     </article>
   )
 }

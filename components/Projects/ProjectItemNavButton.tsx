@@ -8,7 +8,7 @@ interface Props {
 
 export const ProjectItemNavButton: React.FC<Props> = ({ text, link, children }) => (
   <button className='flex font-bold font-serif mr-2'>
-    <a href={link} target='_blank' rel='noopener noreferrer' className='flex text-lightBlue'>
+    <a href={link} target='_blank' rel='noopener noreferrer' className='flex text-lightBlue drop-shadow'>
       {children}{`\u00a0`}{text}
     </a>
   </button>

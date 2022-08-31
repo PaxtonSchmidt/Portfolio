@@ -1,6 +1,8 @@
 export interface ProjectContent {
   title: string,
-  img: any,
+  img: string,
+  imgAlt: string,
+  imgDB?: string,
   demoLink?: string,
   codeLink: string,
   technologies: string[],
@@ -8,7 +10,7 @@ export interface ProjectContent {
   difficulties: string,
   solution: string,
   notableFeatures?: string[],
-  additional?: string
+  additional?: string,
 }
 
 interface ProjectsData {
@@ -19,7 +21,9 @@ interface ProjectsData {
 export const ProjectsData: ProjectsData = {
   BugTracker: { 
     title: 'BugTracker',
-    img: '../../public/btIMG.webP',
+    img: '/btIMG.webP',
+    imgAlt: 'A image of my Bug Tracker project',
+    imgDB: 'BTDB.webP',
     demoLink: 'https://www.bugtrackerapp.net/Demo',
     codeLink: 'https://github.com/PaxtonSchmidt/BT',
     technologies: [
@@ -38,7 +42,7 @@ export const ProjectsData: ProjectsData = {
       'JSON Web Token'
     ],
     role: `BugTracker is a role-based issue tracking platform for professional development teams and small-time collaborators. People who create a team on BugTracker can invite their teammates, manage roles and organize projects. BugTracker concerns itself with tracking issues, so users can focus on solving problems.`,
-    difficulties: `The initial iteration of the app lacked a global state solution causing an array of issues that include a hard-to-manage tree of drilled props and repetitive requests to the server.`,
+    difficulties: `The initial iteration of the app lacked a global state solution causing an array of issues that included a hard-to-manage tree of drilled props and repetitive requests to the server.`,
     solution: `Redux fixed both issues with some positive side effects. It increased the speed at which the application could horizontally expand because I no longer had to backpedal and refactor when implementing a new feature that required the old state.`,
     notableFeatures: [
       'Registration',
@@ -55,7 +59,8 @@ export const ProjectsData: ProjectsData = {
   },
   Portfolio: {
     title: 'Portfolio',
-    img: '../../public/btIMG.webP',
+    img: '/portfolioImg.webP',
+    imgAlt: 'A photo of my portfolio project landing page',
     codeLink: 'https://github.com/PaxtonSchmidt/Portfolio',
     technologies: [
       'ReactJS',

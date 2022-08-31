@@ -17,7 +17,7 @@ export const MoreWorks: React.FC = () => {
         </MoreWorksTab>
       </MoreWorksSidebar>
 
-      <figure className={`h-full relative md:w-3/4 mx-auto order-1 md:order-2 md:ml-0 max-w-[700px] h-[400px] shadow rounded`}>
+      <figure className={`h-full relative md:w-3/4 mx-auto order-1 md:order-2 md:ml-0 max-w-[700px] h-[400px] drop-shadow rounded`}>
         <img className='object-cover relative object-center h-full rounded' src={'./TDlarge.webP'} />
         <div className='h-[80px] w-full absolute bg-white/50 backdrop-blur-sm bottom-0 rounded-b'>
         </div>
