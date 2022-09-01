@@ -13,8 +13,8 @@ export const MastheadArrow: React.FC = () => {
   }
   
   return (
-    <span onClick={handleClick} className="material-symbols-outlined absolute text-5xl bottom-5 text-white cursor-pointer">
+    <div onClick={handleClick} className="material-symbols-outlined w-fit absolute text-5xl bottom-5 left-[50%] -translate-x-[50%] text-white cursor-pointer">
       expand_more
-    </span>
+    </div>
   )
 }

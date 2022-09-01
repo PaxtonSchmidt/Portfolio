@@ -14,7 +14,7 @@ export const MastheadButton: React.FC<Props> = ({ title, navLink, isScrollTo = f
 
 
   return (
-    <nav className='h-30 w-fit mx-1 md:ml-0 md:mr-4 p-1 pl-0 cursor-pointer' onClick={()=>handleSelect()}>
+    <nav className='h-30 w-full md:w-fit md:mr-4 text-center md:text-left cursor-pointer' onClick={()=>handleSelect()}>
       <p>{title}</p>
     </nav>
   )

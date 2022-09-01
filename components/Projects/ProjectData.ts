@@ -71,7 +71,7 @@ export const ProjectsData: ProjectsData = {
       'HTML5',
       'Git'
     ],
-    role: `This portfolio is a quick representation of my development works so far.`,
+    role: `This portfolio is a quick representation of my development works so far. It's a React app scaffolded with Next.js and styled with Tailwindcss.`,
     difficulties: `The process of writing and reorganizing semantic CSS continues to slow my development process. While this has a lesser effect on a small project like this portfolio, I felt it could be an opportunity to learn Tailwindcss.`,
     solution: `The beauty of a class library like Tailwindcss is its synergy with ReactJS. Semantic CSS felt logical when writing pure HTML, but abstracting markup into React components makes it feel redundant.`
   }

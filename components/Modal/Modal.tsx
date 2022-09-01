@@ -7,10 +7,10 @@ interface Props{
 }
 
 export const Modal: React.FC<Props> = ({ data }) => (
-  <aside className='fixed w-[90%] md:w-4/5 max-w-[600px] bg-white h-[99%] top-1 text-black z-40 left-1/2 -translate-x-1/2 overflow-y-scroll overflow-x-hidden '>
+  <aside className='fixed w-[90%] md:w-4/5 max-w-[600px] bg-white h-[99%] top-1 text-black z-40 left-1/2 -translate-x-1/2 overflow-y-auto overflow-x-hidden drop-shadow-lg'>
     <div className='w-full h-fit relative'>
       <img src={`${data.img}`} />
-      <div className='h-fit w-full absolute bg-white/50 backdrop-blur-sm -bottom-1 z-10'>
+      <div className='h-fit w-full absolute bg-white/20 backdrop-blur-sm -bottom-1 z-10'>
         <h1 className='pt-5 text-xl text-lightBlue text-center font-bold drop-shadow'>{data.title}</h1>
         <div className='flex mb-5 flex-row w-full justify-center'>
           {data.demoLink && 

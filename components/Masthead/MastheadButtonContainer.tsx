@@ -5,7 +5,7 @@ interface Props {
 }
 
 export const MastheadButtonsContainer: React.FC<Props> = ({ children }) => (
-  <div className='flex w-fit mx-auto text-sm w-full absolute top-4 opacity-90 right-0 text-white font-serif'>
+  <div className='flex mt-1 text-sm w-full opacity-90 text-white font-serif'>
     {children}  
   </div>
 )

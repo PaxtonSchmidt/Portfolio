@@ -2,7 +2,6 @@ import React, { ReactNode, useContext, useRef, useState } from 'react'
 import { Modal } from '../Modal/Modal'
 import { ModalBackground } from '../Modal/ModalBackground'
 import { WidthContext } from '../State/Contexts/WidthContext'
-import useOnScreen from '../State/Hooks/useOnScreen'
 import { ProjectContent } from './ProjectData'
 import { ProjectItemNavButton } from './ProjectItemNavButton'
 
@@ -16,10 +15,10 @@ export const ProjectItem: React.FC<props> = ({ data }) => {
   const onScreenEl = useRef(null)
 
   return (
-    <article className='md:grid pt-36 pb-36 grid-rows-1 grid-cols-4 lg:grid-cols-8  font-serif text-sm border-grey border-b-2'>
-      <figure ref={onScreenEl} className='px-6 lg:px-0 block xl:col-start-2 col-span-4 xl:col-span-3'>
-        <h1 className='text-xl font-sans drop-shadow'>{data.title}</h1>
-        <div className='flex mb-1'>
+    <article className='flex flex-col lg:grid pt-36 pb-36 lg:grid-cols-8  font-serif text-sm border-grey border-b-2'>
+      <figure ref={onScreenEl} className='flex flex-col justify-center w-full lg:grid lg:pl-0 block xl:col-start-2 lg:col-span-4 xl:col-span-3'>
+        <h1 className='text-xl text-center lg:text-left font-sans drop-shadow'>{data.title}</h1>
+        <div className='flex mb-1 mx-auto lg:ml-0 translate-x-1 lg:translate-x-0'>
           {data.demoLink && 
           <ProjectItemNavButton link={data.demoLink} text='Demo'>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor" className="bi bi-mouse2-fill text-lightBlue" viewBox="0 0 16 16">
@@ -32,27 +31,27 @@ export const ProjectItem: React.FC<props> = ({ data }) => {
           </svg>
           </ProjectItemNavButton>
         </div>
-        <img src={`${data.img}`} className='w-80'/>
+        <img src={`${data.img}`} className='w-80 drop-shadow mx-auto lg:ml-0'/>
 
-        <button onClick={()=>setIsOpen(true)} className='h-[40px] bottom-0 mt-2 w-fit px-6 rounded-3xl bg-black text-white shadow-[0px_0px_3px_rgba(0,0,0,0.3)] shadow-white'>
+        <button onClick={()=>setIsOpen(true)} className='h-[40px] mx-auto lg:ml-0 bottom-0 mt-2 w-fit px-6 rounded-3xl bg-black text-white shadow-[0px_0px_3px_rgba(0,0,0,0.3)] shadow-white'>
           Details
         </button>
       </figure>
 
-      <div className='pt-2 lg:pt-12 pl-6 row-span-2 col-span-4 xl:col-span-3 max-w-[500px]'>
-        <figure className='mb-2'>
-          <figcaption className='font-bold'>Project:</figcaption>
+      <div className='flex flex-col mx-auto lg:justify-start content-center pt-2 lg:pt-12 lg:pl-6 lg:row-span-2 lg:col-span-4 xl:col-span-3 max-w-[500px]'>
+        <figure className='mb-2 mx-auto lg:ml-0'>
+          <figcaption className='font-bold text-left'>Project</figcaption>
           <p>{data.role}</p>
         </figure> 
 
         {width > 976 
         &&<> 
           <figure className='mb-2'>
-            <figcaption className='font-bold'>Difficulties:</figcaption>
+            <figcaption className='font-bold text-left'>Difficulties</figcaption>
             <p>{data.difficulties}</p>
           </figure>
           <figure className='mb-2'>
-            <figcaption className='font-bold'>Solution:</figcaption>
+            <figcaption className='font-bold text-left'>Solution</figcaption>
             <p>{data.solution}</p>
           </figure>
         </> 
@@ -60,7 +59,7 @@ export const ProjectItem: React.FC<props> = ({ data }) => {
         
         
         <figure >
-          <figcaption className='font-bold'>Technologies:</figcaption>
+          <figcaption className='font-bold text-left'>Technologies</figcaption>
           <ul className='flex flex-row flex-wrap'>
             {data.technologies.map((tech: string, index: number) => (
               <li key={index} className='flex direction-row mr-2'>
@@ -75,9 +74,9 @@ export const ProjectItem: React.FC<props> = ({ data }) => {
       </div>
 
       {data.notableFeatures 
-      && width > 480
-      &&<div className='grid px-6 lg:px-0 xl:col-start-2 grid-cols-3 pt-2 col-span-4 xl:col-span-3'>
-          <figure className='col-span-3'>
+      && width > 976
+      &&<div className='flex justify-center lg:grid lg:col-span-4 xl:col-span-3 xl:col-start-2'>
+          <figure className='w-80 col-span-3'>
             <figcaption className='font-bold'>Notable Features:</figcaption>
             <ul>
               {data.notableFeatures?.map((feature: string, index: number) => (
