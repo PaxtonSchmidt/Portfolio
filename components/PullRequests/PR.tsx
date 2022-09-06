@@ -8,7 +8,7 @@ interface Props{
 export const PR: React.FC<Props> = () => {
   return (
     <div>
-      
+      Test
     </div>
   )
 }
