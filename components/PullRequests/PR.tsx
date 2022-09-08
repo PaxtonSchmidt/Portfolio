@@ -19,7 +19,11 @@ export const PR: React.FC<Props> = () => {
       method: 'GET',
       mode: 'cors',
     }
+
     let response = fetch('https://api.github.com/users/');
+    // if(response.ok){
+
+    // }
   }, [])
 
   return (
