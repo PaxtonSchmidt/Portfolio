@@ -21,9 +21,11 @@ export const PR: React.FC<Props> = () => {
     }
 
     let response = fetch('https://api.github.com/users/');
-    // if(response.ok){
-
-    // }
+    if(response !== undefined){
+      console.log(
+        response
+      )
+    }
   }, [])
 
   return (
